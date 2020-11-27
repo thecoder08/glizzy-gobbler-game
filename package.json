@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "thecoder08",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@thecoder08/docuget": "^1.0.3",
+    "@thecoder08/http": "^1.0.2"
+  }
 }

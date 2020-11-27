@@ -1,0 +1,21 @@
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+}
+p {
+  font-family: sans-serif;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+a:active {
+  color: lime;
+}
+a:hover {
+  text-decoration: underline;
+}
