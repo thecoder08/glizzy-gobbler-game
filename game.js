@@ -25,9 +25,9 @@ function clickMe() {
   });
 }
 setInterval(function() {
-  $('#game').innerHTML = '';
   request('http://34.67.110.14:25567/get?id=' + id, function(data) {
     var game = JSON.parse(data);
+    $('#game').innerHTML = '';
     for (var person in game) {
       $('#game').innerHTML += person + ': ' + game[person] + '<br>';
     }
