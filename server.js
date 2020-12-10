@@ -2,7 +2,18 @@
 var http = require('@thecoder08/http');
 var games = {};
 http.server(25567, function(req, res, redirect) {
-  if (req.pathname == '/new') {
+  if (req.pathname == '/end') {
+    var game = games[req.query.id];
+    var winner = 'none';
+    for (var player in game) {
+      if (game[player] > 299) {
+        winner = player;
+        break;
+      }
+    }
+    res(200, 'text/plain', winner);
+  }
+  else if (req.pathname == '/new') {
     var letter1 = String.fromCharCode(Math.round(Math.random() * 26) + 64);
     var letter2 = String.fromCharCode(Math.round(Math.random() * 26) + 64);
     var letter3 = String.fromCharCode(Math.round(Math.random() * 26) + 64);
