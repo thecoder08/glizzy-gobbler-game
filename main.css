@@ -19,3 +19,6 @@ a:active {
 a:hover {
   text-decoration: underline;
 }
+body {
+  background-color: gray;
+}

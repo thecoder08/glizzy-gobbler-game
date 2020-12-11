@@ -29,22 +29,31 @@ function clickMe() {
   request('http://34.67.110.14:25567/gobble?username=' + username + '&id=' + id, function(data) {});
   var rand = Math.round(Math.random() * 10);
   if ((rand == 1) || (rand == 2) || (rand == 3) || (rand == 4) || (rand == 5) || (rand == 6)) {
-    eat.stop();
-    smack.stop();
-    mm.stop();
-    eat.play()
+    eat.pause();
+    eat.currentTime = 0;
+    smack.pause();
+    smack.currentTime = 0;
+    mm.pause();
+    mm.currentTime = 0;
+    eat.play();
   }
   else if ((rand == 7) || (rand == 8)) {
-    eat.stop();
-    smack.stop();
-    mm.stop();
+    eat.pause();
+    eat.currentTime = 0;
+    smack.pause();
+    smack.currentTime = 0;
+    mm.pause();
+    mm.currentTime = 0;
     smack.play();
   }
   else if ((rand == 9) || (rand == 10)) {
-    eat.stop();
-    smack.stop();
-    mm.stop();
-    mm.play()
+    eat.pause();
+    eat.currentTime = 0;
+    smack.pause();
+    smack.currentTime = 0;
+    mm.pause();
+    mm.currentTime = 0;
+    mm.play();
   }
 }
 setInterval(function() {
@@ -54,16 +63,16 @@ setInterval(function() {
     for (var person in game) {
       $('#game').innerHTML += person + ': ' + game[person] + '<br>';
     }
-  });
-  request('http://34.67.110.14:25567/end?id=' + id, function(data) {
-    if (data == 'none') {
+    request('http://34.67.110.14:25567/end?id=' + id, function(data) {
+      if (data == 'none') {
 
-    }
-    else if (data == username) {
-      document.location.href = 'win.html';
-    }
-    else {
-      document.location.href = 'lose.html?winner=' + data;
-    }
+      }
+      else if (data == username) {
+        document.location.href = 'win.html';
+      }
+      else {
+        document.location.href = 'lose.html?winner=' + data;
+      }
+    });
   });
-}, 10);
+}, 100);
