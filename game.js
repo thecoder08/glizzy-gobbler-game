@@ -62,6 +62,7 @@ setInterval(function() {
     $('#game').innerHTML = '';
     for (var person in game) {
       $('#game').innerHTML += person + ': ' + game[person] + '<br>';
+      $('#game').innerHTML += '<img src="gobbler.jpg" alt="Gobbler" style="width: 100px;"><br>';
     }
     request('http://34.67.110.14:25567/end?id=' + id, function(data) {
       if (data == 'none') {
